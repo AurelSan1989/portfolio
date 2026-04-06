@@ -500,10 +500,16 @@ section {
 
 .portfolio-image {
     width: 100%;
-    aspect-ratio: 16/10;
     background: linear-gradient(135deg, #E8E8ED 0%, #C7C7CC 100%);
     position: relative;
     overflow: hidden;
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; 
+    display: block;
 }
 
 .portfolio-image::after {
