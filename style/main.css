@@ -23,6 +23,10 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     font-family: var(--font-sans);
     color: var(--color-charcoal);
@@ -710,6 +714,14 @@ footer {
 @media (max-width: 640px) {
     nav ul {
         display: none;
+    }
+
+    .container {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+
+    .hero-grid > *{
+        min-width: 0;
     }
     
     .hero-title {
