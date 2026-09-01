@@ -17,13 +17,18 @@
     <link rel="stylesheet" href="style/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="header-content">
             <a href="#" class="header-logo" aria-label="Retour en haut de page">AG</a>
-            <nav>
+            <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Ouvrir le menu">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
+            <nav id="primary-nav">
                 <ul>
                     <li><a href="#experience">Expérience</a></li>
                     <li><a href="#competences">Compétences</a></li>
@@ -187,6 +192,7 @@
                         <span class="skill-tag">HTML5</span>
                         <span class="skill-tag">CSS3</span>
                         <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
                         <span class="skill-tag">Nom de domaine</span>
                         <span class="skill-tag">Hébergement</span>
                         <span class="skill-tag">Référencement</span>
@@ -218,6 +224,7 @@
                         <span class="skill-tag">Cahier de recette</span>
                         <span class="skill-tag">Test exploratoire</span>
                         <span class="skill-tag">Bilan de campagne de test</span>
+                        <span class="skill-tag">Automatisation</span>
                     </div>
                 </div>
             </div>
@@ -347,5 +354,6 @@
             </div>
         </div>
     </footer>
+    <script src="script.js" defer></script>
 </body>
 </html>
