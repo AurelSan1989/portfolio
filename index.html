@@ -17,7 +17,9 @@
     <link rel="stylesheet" href="style/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></noscript>
 </head>
 <body>
     <header>
@@ -40,6 +42,7 @@
         </div>
     </header>
 
+    <main>
     <!--Hero Section-->
     <section class="hero">
         <div class="container">
@@ -69,7 +72,7 @@
                 <div class="hero-image">
                     <div class="profile-card">
                         <div class="profile-photo">
-                            <img src="img/aurelien-resize_428.jpg" alt="Aurélien Girodet">
+                            <img src="img/aurelien-resize_428.jpg" alt="Aurélien Girodet" width="428" height="431">
                         </div>
                         <div class="contact-info">
                             <div class="contact-item">
@@ -105,7 +108,7 @@
             <div class="portfolio-grid">
                 <a href="https://sabine-miniconi.fr/" target="_blank" rel="noopener noreferrer" class="portfolio-item reveal">
                     <div class="portfolio-image">
-                        <img src="img/portfolio-sabine.webp" alt="Capture d'écran de mon projet pour Sabine" width="1600" height="813" loading="lazy">
+                        <img src="img/portfolio-sabine.webp" srcset="img/portfolio-sabine-800.webp 800w, img/portfolio-sabine.webp 1600w" sizes="(max-width: 968px) 90vw, 700px" alt="Capture d'écran de mon projet pour Sabine" width="1600" height="813" loading="lazy">
                     </div>
                     <div class="portfolio-content">
                         <h3 class="portfolio-title">Site officiel de Sabine Miniconi</h3>
@@ -114,15 +117,16 @@
                         </p>
                         <div class="portfolio-tags">
                             <span class="portfolio-tag">Musique</span>
+                            <span class="portfolio-tag">Artiste</span>
                             <span class="portfolio-tag">UX/UI</span>
-                            <span class="portfolio-tag">Cloud</span>
                         </div>
+                        <span class="portfolio-link-hint">Voir le site <span class="portfolio-link-arrow" aria-hidden="true">↗</span></span>
                     </div>
                 </a>
 
                 <a href="https://aurelsan1989.github.io/Alain/" target="_blank" rel="noopener noreferrer" class="portfolio-item reveal">
                     <div class="portfolio-image">
-                        <img src="img/portfolio-alain.webp" alt="Capture d'écran du site d'Alain Girodet" width="1600" height="813" loading="lazy">
+                        <img src="img/portfolio-alain.webp" srcset="img/portfolio-alain-800.webp 800w, img/portfolio-alain.webp 1600w" sizes="(max-width: 968px) 90vw, 700px" alt="Capture d'écran du site d'Alain Girodet" width="1600" height="813" loading="lazy">
                     </div>
                     <div class="portfolio-content">
                         <h3 class="portfolio-title">Site officiel d'Alain Girodet</h3>
@@ -134,12 +138,13 @@
                             <span class="portfolio-tag">Édition</span>
                             <span class="portfolio-tag">Photographie</span>
                         </div>
+                        <span class="portfolio-link-hint">Voir le site <span class="portfolio-link-arrow" aria-hidden="true">↗</span></span>
                     </div>
                 </a>
 
                 <a href="https://coco-react-phi.vercel.app" target="_blank" rel="noopener noreferrer" class="portfolio-item reveal">
                     <div class="portfolio-image">
-                        <img src="img/portfolio-coralie.webp" alt="Capture d'écran du site de Coralie" width="1600" height="813" loading="lazy">
+                        <img src="img/portfolio-coralie.webp" srcset="img/portfolio-coralie-800.webp 800w, img/portfolio-coralie.webp 1600w" sizes="(max-width: 968px) 90vw, 700px" alt="Capture d'écran du site de Coralie" width="1600" height="813" loading="lazy">
                     </div>
                     <div class="portfolio-content">
                         <h3 class="portfolio-title">Site de Coralie — Yoga & Bien-être</h3>
@@ -151,8 +156,59 @@
                             <span class="portfolio-tag">Réservation en ligne</span>
                             <span class="portfolio-tag">Bien-être</span>
                         </div>
+                        <span class="portfolio-link-hint">Voir le site <span class="portfolio-link-arrow" aria-hidden="true">↗</span></span>
                     </div>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Method Section -->
+    <section id="methode">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Ma méthode de travail</h2>
+                <p class="section-subtitle">Un processus simple et transparent, de l'échange à la mise en ligne</p>
+            </div>
+            <div class="method-grid">
+                <div class="method-card reveal">
+                    <div class="method-number">01</div>
+                    <h3 class="method-title">Échange & devis</h3>
+                    <p class="method-description">
+                        On échange sur votre activité, vos besoins et votre identité visuelle. Je vous propose ensuite un délai et un tarif clairs pour votre projet.
+                    </p>
+                </div>
+                <div class="method-card reveal">
+                    <div class="method-number">02</div>
+                    <h3 class="method-title">Développement</h3>
+                    <p class="method-description">
+                        Après réception d'un acompte, je développe votre site avec un ou deux allers-retours selon le nombre de fonctionnalités, pour ajuster le résultat à vos attentes.
+                    </p>
+                </div>
+                <div class="method-card reveal">
+                    <div class="method-number">03</div>
+                    <h3 class="method-title">Livraison & suivi</h3>
+                    <p class="method-description">
+                        Je vous guide vers un hébergeur et un nom de domaine adaptés à vos besoins (à votre charge), puis j'assure la maintenance et les modifications mineures de votre site.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <div class="cta-content reveal">
+                <h2 class="cta-title">Travaillons ensemble</h2>
+                <p class="cta-description">
+                    Vous êtes restaurateur, coiffeur ou artisan et vous cherchez un site simple, rapide et à votre image ? Discutons de votre projet.
+                </p>
+                <div class="cta-buttons">
+                    <a href="mailto:aurelien.girodet@gmail.com" class="btn btn-primary">Me contacter</a>
+                    <a href="https://www.linkedin.com/in/aurélien-girodet/" target="_blank" class="btn btn-secondary">Me suivre sur LinkedIn</a>
+                </div>
+                <p class="cta-note">Premier échange gratuit et sans engagement — des tarifs pensés pour accompagner le lancement de votre projet.</p>
             </div>
         </div>
     </section>
@@ -334,22 +390,7 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section" id="contact">
-        <div class="container">
-            <div class="cta-content reveal">
-                <h2 class="cta-title">Travaillons ensemble</h2>
-                <p class="cta-description">
-                    Vous êtes restaurateur, coiffeur ou artisan et vous cherchez un site simple, rapide et à votre image ? Discutons de votre projet.
-                </p>
-                <div class="cta-buttons">
-                    <a href="mailto:aurelien.girodet@gmail.com" class="btn btn-primary">Me contacter</a>
-                    <a href="https://www.linkedin.com/in/aurélien-girodet/" target="_blank" class="btn btn-secondary">Me suivre sur LinkedIn</a>
-                </div>
-                <p class="cta-note">Premier échange gratuit et sans engagement — des tarifs pensés pour accompagner le lancement de votre projet.</p>
-            </div>
-        </div>
-    </section>
+    </main>
 
     <!-- Footer -->
     <footer>
