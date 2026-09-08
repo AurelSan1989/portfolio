@@ -35,8 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Ombre du header une fois qu'on a commencé à scroller
     if (header) {
+        let isScrolled = false;
         const onScroll = () => {
-            header.classList.toggle('scrolled', window.scrollY > 20);
+            const scrolled = window.scrollY > 20;
+            if (scrolled !== isScrolled) {
+                isScrolled = scrolled;
+                header.classList.toggle('scrolled', scrolled);
+            }
         };
         onScroll();
         window.addEventListener('scroll', onScroll, { passive: true });
