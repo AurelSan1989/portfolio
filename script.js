@@ -47,6 +47,65 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', onScroll, { passive: true });
     }
 
+    // Modale Mentions légales
+    const modalOverlay = document.getElementById('mentions-legales');
+    const modalTrigger = document.getElementById('mentions-legales-trigger');
+    if (modalOverlay && modalTrigger) {
+        const modalClose = modalOverlay.querySelector('.modal-close');
+        const focusableSelector = 'a[href], button:not([disabled])';
+        let lastFocusedEl = null;
+
+        const onModalKeydown = (event) => {
+            if (event.key === 'Escape') {
+                closeModal();
+                return;
+            }
+            if (event.key !== 'Tab') return;
+            const focusables = Array.from(modalOverlay.querySelectorAll(focusableSelector));
+            if (!focusables.length) return;
+            const first = focusables[0];
+            const last = focusables[focusables.length - 1];
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
+        };
+
+        function openModal() {
+            lastFocusedEl = document.activeElement;
+            modalOverlay.hidden = false;
+            modalClose.focus();
+            document.addEventListener('keydown', onModalKeydown);
+        }
+
+        function closeModal() {
+            modalOverlay.hidden = true;
+            document.removeEventListener('keydown', onModalKeydown);
+            if (lastFocusedEl) lastFocusedEl.focus();
+            if (location.hash === '#mentions-legales') {
+                history.replaceState(null, '', location.pathname + location.search);
+            }
+        }
+
+        modalTrigger.addEventListener('click', (event) => {
+            event.preventDefault();
+            openModal();
+        });
+
+        modalClose.addEventListener('click', closeModal);
+
+        modalOverlay.addEventListener('click', (event) => {
+            if (event.target === modalOverlay) closeModal();
+        });
+
+        if (location.hash === '#mentions-legales') {
+            openModal();
+        }
+    }
+
     // Apparition progressive des sections/cartes au scroll
     const revealEls = document.querySelectorAll('.reveal');
     if (revealEls.length && 'IntersectionObserver' in window) {

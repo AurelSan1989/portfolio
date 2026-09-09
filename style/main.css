@@ -869,6 +869,18 @@ footer {
     font-size: 0.875rem;
 }
 
+.footer-link {
+    color: var(--color-slate);
+    margin-left: var(--spacing-xs);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--color-accent-dark);
+}
+
 .social-links {
     display: flex;
     gap: var(--spacing-sm);
@@ -891,6 +903,93 @@ footer {
     background: var(--color-accent);
     color: var(--color-white);
     transform: translateY(-3px);
+}
+
+/* Modale Mentions légales */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(28, 28, 30, 0.6);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-md);
+}
+
+.modal-overlay[hidden] {
+    display: none;
+}
+
+.modal {
+    background: var(--color-white);
+    width: 100%;
+    max-width: 640px;
+    max-height: 85vh;
+    overflow-y: auto;
+    border-radius: 2px;
+    padding: var(--spacing-lg) var(--spacing-md);
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: var(--color-pearl);
+    color: var(--color-charcoal);
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+    background: var(--color-accent);
+    color: var(--color-white);
+}
+
+.modal-content h2 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-charcoal);
+    margin-bottom: var(--spacing-md);
+}
+
+.modal-content h3 {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-charcoal);
+    margin-top: var(--spacing-md);
+    margin-bottom: 0.5rem;
+}
+
+.modal-content h3:first-of-type {
+    margin-top: 0;
+}
+
+.modal-content p {
+    color: var(--color-slate);
+    line-height: 1.7;
+    font-size: 0.9375rem;
+}
+
+.modal-content a {
+    color: var(--color-accent-dark);
+}
+
+.modal-content .placeholder {
+    background: rgba(199, 169, 107, 0.15);
+    color: var(--color-accent-dark);
+    padding: 0.05em 0.4em;
+    border-radius: 3px;
+    font-weight: 600;
 }
 
 /* Responsive */
