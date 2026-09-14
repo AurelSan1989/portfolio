@@ -270,6 +270,20 @@ nav a:hover::after {
     .education-item:nth-child(4) {
         transition-delay: 0.3s;
     }
+
+    .hero-label::after {
+        transform-origin: left;
+        animation: drawUnderline 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
+    }
+
+    @keyframes drawUnderline {
+        from {
+            transform: scaleX(0);
+        }
+        to {
+            transform: scaleX(1);
+        }
+    }
 }
 
 .hero-label {
@@ -454,9 +468,11 @@ section {
     position: relative;
 }
 
-.experience-item:hover {
-    transform: translateX(8px);
-    box-shadow: 0 10px 40px rgba(28, 28, 30, 0.08);
+@media (hover: hover) {
+    .experience-item:hover {
+        transform: translateX(8px);
+        box-shadow: 0 10px 40px rgba(28, 28, 30, 0.08);
+    }
 }
 
 .experience-header {
@@ -531,9 +547,11 @@ section {
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.skill-category:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 40px rgba(28, 28, 30, 0.08);
+@media (hover: hover) {
+    .skill-category:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 40px rgba(28, 28, 30, 0.08);
+    }
 }
 
 .skill-category h3 {
@@ -582,9 +600,11 @@ section {
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.education-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 40px rgba(28, 28, 30, 0.08);
+@media (hover: hover) {
+    .education-item:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 40px rgba(28, 28, 30, 0.08);
+    }
 }
 
 /* Method Section */
@@ -602,9 +622,11 @@ section {
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.method-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 40px rgba(28, 28, 30, 0.08);
+@media (hover: hover) {
+    .method-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 40px rgba(28, 28, 30, 0.08);
+    }
 }
 
 .method-number {
@@ -667,9 +689,11 @@ section {
     color: inherit;
 }
 
-.portfolio-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 60px rgba(28, 28, 30, 0.12);
+@media (hover: hover) {
+    .portfolio-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 60px rgba(28, 28, 30, 0.12);
+    }
 }
 
 .portfolio-image {
@@ -687,8 +711,10 @@ section {
     transition: transform 0.4s ease;
 }
 
-.portfolio-item:hover .portfolio-image img {
-    transform: scale(1.05);
+@media (hover: hover) {
+    .portfolio-item:hover .portfolio-image img {
+        transform: scale(1.05);
+    }
 }
 
 .portfolio-image::after {
@@ -741,6 +767,21 @@ section {
 .portfolio-item:focus-visible .portfolio-link-hint {
     opacity: 1;
     transform: translateY(0);
+}
+
+@media (hover: none) {
+    .portfolio-link-hint {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@media (hover: none) {
+    .portfolio-item:active,
+    .method-card:active,
+    .btn:active {
+        transform: scale(0.98);
+    }
 }
 
 .portfolio-tag {
@@ -827,11 +868,13 @@ section {
     border: 1px solid var(--color-accent);
 }
 
-.btn-primary:hover {
-    background: var(--color-accent-dark);
-    border-color: var(--color-accent-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(199, 169, 107, 0.3);
+@media (hover: hover) {
+    .btn-primary:hover {
+        background: var(--color-accent-dark);
+        border-color: var(--color-accent-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(199, 169, 107, 0.3);
+    }
 }
 
 .btn-secondary {
@@ -840,10 +883,12 @@ section {
     border: 1px solid var(--color-white);
 }
 
-.btn-secondary:hover {
-    background: var(--color-white);
-    color: var(--color-charcoal);
-    transform: translateY(-2px);
+@media (hover: hover) {
+    .btn-secondary:hover {
+        background: var(--color-white);
+        color: var(--color-charcoal);
+        transform: translateY(-2px);
+    }
 }
 
 /* Footer */
@@ -899,10 +944,12 @@ footer {
     transition: all 0.3s ease;
 }
 
-.social-link:hover {
-    background: var(--color-accent);
-    color: var(--color-white);
-    transform: translateY(-3px);
+@media (hover: hover) {
+    .social-link:hover {
+        background: var(--color-accent);
+        color: var(--color-white);
+        transform: translateY(-3px);
+    }
 }
 
 /* Modale Mentions légales */
